@@ -1,5 +1,6 @@
 <script>
 	import { upsertArticle } from '../service/upsertArticle';
+	import {goto} from "$app/navigation"
 
 	/**
 	 * @type {string}
@@ -20,9 +21,9 @@
 </script>
 
 <form
-	on:submit={() => {
+	on:submit={async () => {
 		console.log({ title, description, markdown });
-		upsertArticle(
+		const upsertResponse = await upsertArticle(
 			{
 				title,
 				description,
@@ -30,10 +31,13 @@
 			},
 			_id
 		);
+		console.log({upsertResponse})
+		goto(`/article/${upsertResponse.article.slug}`)
+
 	}}
 >
 	<input type="text" placeholder="Give the article a title" id="title-input" bind:value={title} />
-	<input type="text" placeholder="Write a summary of your article" bind:value={description} />
+	<!-- <input type="text" placeholder="Write a summary of your article" bind:value={description} /> -->
 	<textarea bind:value={markdown} placeholder="Write about anything!" />
 	<input type="submit" value="Save article" />
 </form>

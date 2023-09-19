@@ -55,11 +55,15 @@
 		height: 100vh;
 		overflow: scroll;
 	}
+	.timeline-container::-webkit-scrollbar{
+		display: none;
+	}
+
 	.title {
-		position: absolute;
+		position: sticky;
 		color: white;
 		top: 40%;
-		font-size: 40px;
+		font-size: 30px;
 		margin-left: 5vw;
 		border-radius: 5px;
 		padding: 20px 5vw;
@@ -71,6 +75,7 @@
 		width: 100vw;
 		background-color: #5a51d2;
 		min-width: 500px;
+		padding-bottom: 100px;
 	}
 
 	/* The actual timeline (the vertical ruler) */

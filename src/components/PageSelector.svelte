@@ -24,8 +24,8 @@
 		<input type="number" max={pageCount} min={1} step="1" bind:value={page} />/{pageCount}
 		<!-- <p>{page}</p> -->
 		<button
-			class={page + 1 < pageCount ? '' : 'disabled'}
-			disabled={page + 1 >= pageCount}
+			class={page + 1 <= pageCount ? '' : 'disabled'}
+			disabled={page + 1 > pageCount}
 			on:click={() => {
 				if (page < pageCount) {
 					page += 1;

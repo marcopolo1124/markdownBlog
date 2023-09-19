@@ -83,14 +83,13 @@
 		scroll-snap-type: y mandatory;
 		scroll-behavior: smooth;
 		-webkit-overflow-scrolling: touch;
-		overflow-x: scroll;
-		height: 100vh;
+		overflow-x: hidden;
+		height: calc(100vh - 53px);
 		width: 100vw;
 	}
 	section {
-		height: 100vh;
 		scroll-snap-align: start;
-		/* overflow: scroll; */
+		height: 100vh;
 	}
 
 	#introduction {

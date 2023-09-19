@@ -11,13 +11,11 @@ export async function errorHandler(
 ) {
 	console.log('errorhandler');
 	if (!acceptedStatusCodes.includes(status)) {
-		console.log('failure');
 		const responseJson = await response.json();
 		throw new ServerError(
 			status,
 			`Server errored with status ${status}: ${JSON.stringify(responseJson.error)}`
 		);
 	}
-	console.log('success');
 	return true;
 }

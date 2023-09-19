@@ -119,10 +119,21 @@
         }
 
         p,
+        li,
         .retro-p {
         font-size: 0.8rem;
         margin-bottom: 1.3rem;
         line-height: 1.3rem;
+        }
+
+        ul {
+            list-style-type: square;
+        }
+
+        ul ul {
+            list-style-type: circle;
+            padding-left: 2rem;
+
         }
 
         h1,

@@ -48,9 +48,13 @@ table {
 	border-spacing: 0;
 }
 
-h1, h2, h3, p {
+h1, h2, h3, p{
 	padding: 5px 10px;
 	white-space: pre-wrap;
+}
+
+ul {
+	padding: 0 20px;
 }
 
 pre {
@@ -60,6 +64,11 @@ pre {
 blockquote {
 	margin: 5px 10px;
 }
+
+/* html {
+	width: 100vw;
+	overflow-x: hidden;
+} */
 
 /* body {
   line-height: 1.85;
