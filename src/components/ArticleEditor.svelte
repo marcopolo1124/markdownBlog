@@ -21,7 +21,7 @@
 
 <form
 	on:submit={() => {
-		// console.log({ title, description, markdown });
+		console.log({ title, description, markdown });
 		upsertArticle(
 			{
 				title,
