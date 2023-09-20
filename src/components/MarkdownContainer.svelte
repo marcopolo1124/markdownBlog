@@ -24,7 +24,7 @@
             overflow-x: auto;
             // margin: 20px;
             border-radius: 2px;
-            font-size: 0.7rem;
+            font-size: 1rem;
             
         }
 
@@ -102,32 +102,21 @@
             text-decoration: none;
             }
 
-            html {
-            font-size: 12px;
-            }
-
-            @media screen and (min-width: 32rem) and (max-width: 48rem) {
-            html {
-                font-size: 15px;
-            }
-            }
-
-            @media screen and (min-width: 48rem) {
-            html {
-                font-size: 16px;
-            }
-        }
-
         p,
-        li,
+
         .retro-p {
-        font-size: 0.8rem;
+        font-size: 1rem;
         margin-bottom: 1.3rem;
         line-height: 1.3rem;
         }
 
+        li {
+            margin-bottom: 0.5rem
+        }
+
         ul {
             list-style-type: square;
+            padding-left: 2.3rem
         }
 
         ul ul {

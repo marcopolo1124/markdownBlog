@@ -48,14 +48,16 @@
     }
 
     .navbutton:hover {
-        border-bottom: 2px solid gray;
+        border-bottom: 3px solid gray;
     }
 
     a {
-        padding: 5px;
+        padding: 10px;
         text-decoration: none;
         color: black;
-        margin: 5px;
+        margin: 10px;
+        margin-bottom: 0;
+        font-size: 20px;
     }
 
     .logo {
@@ -64,7 +66,7 @@
     }
 
     .active {
-        border-bottom: 2px solid blue;
+        border-bottom: 3px solid blue;
     }
 
     .link-button {
@@ -72,7 +74,7 @@
         color: white;
         border-radius: 3px;
         text-align: center;
-        height: 15px;
+        height: 20px;
     }
 
     .link-button:hover {

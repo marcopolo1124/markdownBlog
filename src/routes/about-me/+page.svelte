@@ -13,7 +13,7 @@
 	import GitHubIcon from '~icons/mdi/github';
 	import Timeline from '../../components/Timeline.svelte';
 
-	let iconSize = '50px';
+	let iconSize = '85px';
 </script>
 
 <div id="about-me-container">
@@ -72,7 +72,7 @@
 
 <style>
 	h1 {
-		font-size: 50px;
+		font-size: 100px;
 	}
 
 	.skill.container {
@@ -103,9 +103,9 @@
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
-		padding: 0 10px;
-		margin: 0 10px;
-		border-right: 5px solid #9203d3;
+		padding: 0 50px;
+		margin: 0 50px;
+		border-right: 8px solid #9203d3;
 		/* height: 70px; */
 	}
 	#skills,
@@ -119,7 +119,7 @@
 	h2 {
 		/* color: white; */
 		font-weight: 700;
-		font-size: 27px;
+		font-size: 38px;
 		margin: 0 20px;
 		padding: 0 10px;
 		/* text-align: center; */
@@ -145,7 +145,7 @@
 		width: 20vw;
 		margin: 10px;
 		text-align: center;
-		height: 28vh;
+		height: 20vh;
 		padding: 20px 10px;
 		box-shadow: 10px 5px gray;
 		min-width: 150px;
@@ -172,7 +172,11 @@
 	}
 
 	p {
-		font-size: 12px;
+		font-size: 18px;
+	}
+
+	h3 {
+		font-size: 20px;
 	}
 
 	@media only screen and (max-width: 850px) {

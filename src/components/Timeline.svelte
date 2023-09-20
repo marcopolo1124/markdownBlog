@@ -8,7 +8,7 @@
 					<h4>University of Bath | Mathematics and Physics | 1st hons</h4>
 				</div>
 				<div>
-					<img src="uniOfBathLogo.png" alt="logo of the university of bath" width="70px" />
+					<img src="uniOfBathLogo.png" alt="logo of the university of bath" width="110px" />
 				</div>
 			</div>
 		</div>
@@ -20,7 +20,7 @@
 					<p>Created https interfaces to interact with test equipment</p>
 				</div>
 				<div>
-					<img src="3ADesignLogo.png" alt="logo of the 3Adesign" width="70px" />
+					<img src="3ADesignLogo.png" alt="logo of the 3Adesign" width="110px" />
 				</div>
 			</div>
 		</div>
@@ -35,7 +35,7 @@
 					<img
 						src="auroraEnergyResearchLogo.png"
 						alt="logo of the Aurora Energy Research"
-						width="70px"
+						width="110px"
 					/>
 				</div>
 			</div>
@@ -63,7 +63,7 @@
 		position: sticky;
 		color: white;
 		top: 40%;
-		font-size: 30px;
+		font-size: 55px;
 		margin-left: 5vw;
 		border-radius: 5px;
 		padding: 20px 5vw;
@@ -82,7 +82,7 @@
 	.timeline::after {
 		content: '';
 		position: absolute;
-		width: 6px;
+		width: 13px;
 		background-color: white;
 		top: 0;
 		bottom: 0;
@@ -92,7 +92,7 @@
 
 	/* Container around content */
 	.container {
-		padding: 10px 40px;
+		padding: 15px 50px;
 		position: relative;
 		background-color: inherit;
 		width: 40vw;
@@ -103,12 +103,12 @@
 	.container::after {
 		content: '';
 		position: absolute;
-		width: 20px;
-		height: 20px;
+		width: 26px;
+		height: 26px;
 		right: -17px;
 		background-color: #5a51d2;
-		border: 7px solid white;
-		top: 15px;
+		border: 10px solid white;
+		top: 28px;
 		border-radius: 50%;
 		z-index: 1;
 	}
@@ -122,29 +122,34 @@
 		content: ' ';
 		height: 0;
 		position: absolute;
-		top: 22px;
+		top: 35px;
 		width: 0;
 		z-index: 1;
-		left: 31px;
+		left: 37px;
 		border: medium solid white;
-		border-width: 10px 10px 10px 0;
+		border-width: 13px 13px 13px 0;
 		border-color: transparent white transparent transparent;
 	}
 
 	/* Fix the circle for containers on the right side */
 	.right::after {
-		left: -17px;
+		left: -19px;
 	}
 
 	h3 {
-		font-size: 20px;
-		padding: 5px 10px;
+		font-size: 35px;
+		padding: 8px 15px;
 	}
 
 	h4 {
-		font-size: 14px;
+		font-size: 24px;
 		color: grey;
-		padding: 5px 10px;
+		padding: 8px 15px;
+	}
+
+	p {
+		font-size: 20px;
+		padding: 8px 15px;
 	}
 
 	/* The actual content */
@@ -160,18 +165,18 @@
 
 	@media only screen and (max-width: 750px) {
 		.title {
-			font-size: 20px;
+			font-size: 40px;
 		}
 		h3 {
-			font-size: 13px;
+			font-size: 26px;
 		}
 
 		h4 {
-			font-size: 10px;
+			font-size: 20px;
 		}
 
 		p {
-			font-size: 8px;
+			font-size: 16px;
 		}
 
 		img {

@@ -14,7 +14,7 @@
 <div class="card">
 	<a href={`/article/${slug}`}>
 		<div class="info-container">
-			<h2 class="card-title">{title}</h2>
+			<h3 class="card-title">{title}</h3>
 			<p class="muted">{new Date(createdAt).toLocaleDateString()}</p>
 			<MarkdownContainer source={markdown}/>
 		</div>
@@ -35,6 +35,37 @@
 		border-radius: 5px;
 	}
 
+	h1,
+        .retro-h1 {
+            margin-top: 0;
+            font-size: 3.998rem;
+        }
+
+        h2,
+        .retro-h2 {
+            font-size: 2.827rem;
+        }
+
+        h3,
+        .retro-h3 {
+            font-size: 1.999rem;
+        }
+
+        h4,
+        .retro-h4 {
+            font-size: 1.414rem;
+        }
+
+        h5,
+        .retro-h5 {
+            font-size: 1.121rem;
+        }
+
+        h6,
+        .retro-h6 {
+            font-size: .88rem;
+        }
+
 	/* .card:before {
 		content:'';
 		width: 100%;
@@ -45,7 +76,7 @@
 	} */
 
 	.muted {
-		font-size: 0.7rem;
+		font-size: 1rem;
 	}
 
 	.card a {

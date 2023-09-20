@@ -53,10 +53,11 @@
 	}
 
 	#title-input {
-		font-size: 24px;
+		font-size: 3.994rem;
 	}
 
 	textarea {
 		min-height: 70vh;
+		font-size: 1rem
 	}
 </style>
