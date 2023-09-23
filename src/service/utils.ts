@@ -1,8 +1,6 @@
-import dotenv from "dotenv"
+import { PUBLIC_API_URL } from "$env/static/public";
 
-dotenv.config()
-
-export const APIUrl = process.env.API_URL
+export const APIUrl = PUBLIC_API_URL
 
 class ServerError extends Error {
 	constructor(public status: number, message?: string) {
