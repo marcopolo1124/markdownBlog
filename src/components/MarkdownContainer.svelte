@@ -96,22 +96,24 @@
             h3 {
                 page-break-after: avoid;
             }
-            }
+        }
 
-            .retro-no-decoration {
+        .retro-no-decoration {
             text-decoration: none;
-            }
+        }
 
         p,
 
         .retro-p {
-        font-size: 1rem;
+        font-size: 1.3rem;
         margin-bottom: 1.3rem;
-        line-height: 1.3rem;
+        line-height: 1.5rem;
         }
 
         li {
-            margin-bottom: 0.5rem
+            margin-bottom: 0.8rem;
+            font-size: 1.3rem;
+            line-height: 1.5rem;
         }
 
         ul {

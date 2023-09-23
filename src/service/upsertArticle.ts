@@ -1,9 +1,8 @@
 import type { Article } from '../types/articleType';
-import { errorHandler } from './errorHandler';
+import { errorHandler, APIUrl } from './utils';
 
 export async function upsertArticle(body: Article, articleId?: string) {
-	const API_URL = 'http://localhost:8081';
-	const endpoint = `${API_URL}/articles/edit${articleId ? '/' + articleId : ''}`;
+	const endpoint = `${APIUrl}/articles/edit${articleId ? '/' + articleId : ''}`;
 	const upsertResponse = await fetch(endpoint, {
 		method: 'PUT',
 		body: JSON.stringify(body),

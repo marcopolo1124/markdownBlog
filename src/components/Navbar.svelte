@@ -33,6 +33,7 @@
 </nav>
 
 <style>
+
     nav {
         width: 100%;
         display: flex;
@@ -45,6 +46,10 @@
     .left {
         display: flex;
         /* padding: 5px 0; */
+    }
+
+    .navbutton {
+        border-bottom: 3px solid transparent;
     }
 
     .navbutton:hover {

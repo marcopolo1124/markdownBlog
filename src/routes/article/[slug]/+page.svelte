@@ -44,7 +44,7 @@
 
 <style>
 	.muted {
-		font-size: 0.8rem;
+		font-size: 1.3rem;
 		color: grey;
 	}
 	h1 {

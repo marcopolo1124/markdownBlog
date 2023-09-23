@@ -1,3 +1,9 @@
+import dotenv from "dotenv"
+
+dotenv.config()
+
+export const APIUrl = process.env.API_URL
+
 class ServerError extends Error {
 	constructor(public status: number, message?: string) {
 		super(message);
