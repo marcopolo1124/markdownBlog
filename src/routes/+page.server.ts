@@ -14,7 +14,7 @@ export async function load({url}) {
     }
 
     const pageCount = Math.ceil((await Article.count()) / perPage)
-    if (pageNum > pageCount) {
+    if (pageNum > pageCount && pageCount > 0) {
         throw redirect(303, `?page=${pageCount}&perPage=${perPage}`)
     }
 
