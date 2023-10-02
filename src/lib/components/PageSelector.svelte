@@ -1,4 +1,7 @@
 <script>
+  import { goto } from "$app/navigation";
+  import { redirect } from "@sveltejs/kit";
+
 
 	/**
 	 * @type {number}
@@ -8,6 +11,10 @@
 	 * @type {number}
 	 */
 	export let pageCount;
+	/**
+	 * @type {number}
+	 */
+	export let perPage;
 </script>
 
 <div class="page-selector">
@@ -26,10 +33,12 @@
 		<button
 			class={page + 1 <= pageCount ? '' : 'disabled'}
 			disabled={page + 1 > pageCount}
-			on:click={() => {
+			on:click={async () => {
 				if (page < pageCount) {
 					page += 1;
 				}
+				console.log({page, perPage})
+				throw redirect(303, `?page=${page}&perPage=${perPage}`)
 			}}>{'>'}</button
 		>
 	</div>

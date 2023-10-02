@@ -1,5 +1,5 @@
 <script>
-	import ArticleEditor from '../../../components/ArticleEditor.svelte';
+	import ArticleEditor from '$lib/components/ArticleEditor.svelte';
 </script>
 
 <ArticleEditor />

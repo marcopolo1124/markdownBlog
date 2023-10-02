@@ -11,7 +11,7 @@
 	import EmailIcon from '~icons/iconamoon/email';
 	// @ts-ignore
 	import GitHubIcon from '~icons/mdi/github';
-	import Timeline from '../../components/Timeline.svelte';
+	import Timeline from '../../lib/components/Timeline.svelte';
 
 	let iconSize = '85px';
 </script>

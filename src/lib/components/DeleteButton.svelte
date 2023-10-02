@@ -1,5 +1,5 @@
 <script>
-	import { deleteArticle } from "../service/deleteArticle";
+	import { deleteArticle } from "../../service/deleteArticle";
 
     /**
 	 * @type {string}

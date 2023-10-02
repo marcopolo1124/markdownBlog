@@ -1,27 +1,10 @@
 <script>
-	import { fetchArticle } from '../../../service/getArticle';
-	import { onMount } from 'svelte';
-  	import MarkdownContainer from '../../../components/MarkdownContainer.svelte';
-  import { goto } from '$app/navigation';
+  	import MarkdownContainer from '$lib/components/MarkdownContainer.svelte';
+  	import { goto } from '$app/navigation';
 	export let data;
-	/**
-	 * @type {{ title: string; createdAt: string; sanitizedHtml: string; markdown: string; slug: string}}
-	 */
-	let article;
+	$: article = data.article
 	let failed = false;
 
-	async function fetchAndUpdateArticle() {
-		try {
-			const articleObj = await fetchArticle(data.slug);
-			article = articleObj.article;
-			failed = false;
-		} catch (e) {
-			failed = true;
-		}
-	}
-	onMount(() => {
-		fetchAndUpdateArticle();
-	});
 </script>
 
 	
@@ -31,11 +14,11 @@
 	<p>...loading</p>
 {:else}
 	<div class=editBar>
-		<button on:click={()=>{goto(`/article/${article.slug}/edit`)}}>Edit</button>
+		<button on:click={()=>{goto(`/article/${article?.slug}/edit`)}}>Edit</button>
 	</div>
 	<div class=container>
 		<h1>{article.title}</h1>
-		<p class="muted">Written on {new Date(article.createdAt).toLocaleDateString()}</p>
+		<p class="muted">Written on {article.createdAt?.toLocaleDateString()}</p>
 		<MarkdownContainer source={article.markdown}/>
 	</div>
 

@@ -1,75 +1,48 @@
 <script>
-	import { fetchArticles } from '../service/getArticles';
-	import Card from '../components/Card.svelte';
-	import PageSelector from '../components/PageSelector.svelte';
-  import DeleteButton from '../components/DeleteButton.svelte';
-	let page = 1;
-	let perPage = 5;
-	let pageCount = 0;
-	/**
-	 * @type {any[]}
-	 */
-	let articles = [];
+	import Card from '../lib/components/Card.svelte';
+	export let data;
+	$: articles = data.articles
+	$: pageNum = data.pageNum
+	$: perPage = data.perPage
+	$: pageCount = data.pageCount
+
 	let failed = false;
-	let loading = true;
 	let toggleDeleteArticle = false;
 
-	/**
-	 * @param {number} page
-	 * @param {number} perPage
-	 */
-	async function fetchAndUpdateArticles(page, perPage) {
-		loading = true;
-		try {
-			const articlesObj = await fetchArticles(page, perPage);
-			articles = articlesObj.articles;
-			pageCount = articlesObj.pageCount;
-			loading = false;
-			failed = false;
-		} catch (e) {
-			loading = false;
-			failed = true;
-			console.log(e);
-			articles = [];
-		}
-	}
+	$: console.log(articles)
 
-	/**
-	 * @param {string} articleId
-	 */
-	$: fetchAndUpdateArticles(page, perPage);
-	$: console.log({ failed, articles });
 </script>
 
 <div class=body>
 	{#if failed}
 		<p class=msg>failed to load, please try again later</p>
-	{:else if loading}
-		<p class=msg>loading...</p>
 	{:else if articles.length === 0}
 		<p class=msg>Empty! please write more articles</p>
 	{:else}
-		
 		<div class=container>
 			<div class=editBar>
 				<button on:click={() => {toggleDeleteArticle = !toggleDeleteArticle}}>Toggle delete</button>
 			</div>
 			{#each articles as article (article.slug)}
-				<Card {article}>
-					{#if toggleDeleteArticle}
-						<DeleteButton articleId={article._id} bind:articles bind:toggleDeleteArticle/>
-					{/if}
-				</Card>
+				<Card {article}/>
 			{/each}
 		</div>
-
 	{/if}
 </div>
 
-
-{#if pageCount && page}
-	<PageSelector bind:page bind:pageCount />
-{/if}
+<div class=page-selector-container>
+	<div class=page-selector>
+		{#each Array(pageCount) as _, idx}
+			<a
+				href={`/?page=${idx + 1}&perPage=${perPage}`}
+				class={`page-link ${idx + 1 === pageNum? 'current-page': ''}` }
+				on:click={() => {pageNum = idx + 1}}
+			>
+				{idx + 1}
+			</a>
+		{/each}
+	</div>
+</div>
 
 <style>
 	.body {
@@ -77,6 +50,7 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		padding: 0 200px;
 
 	}
 
@@ -99,5 +73,23 @@
 		text-align: center;
 	}
 
+	.page-selector-container {
+		width: 100vw;
+		display: flex;
+		justify-content: center;
+	}
+	a.page-link {
+		margin: 2px;
+		text-decoration: none;
+		color: black;
+		font-size: 20px;
+	}
 
+	a.page-link:hover {
+		color: grey
+	}
+
+	a.page-link.current-page {
+		color: blue
+	}
 </style>

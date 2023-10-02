@@ -1,31 +1,13 @@
 <script>
-	import ArticleEditor from '../../../../components/ArticleEditor.svelte';
-	import { fetchArticle } from '../../../../service/getArticle';
-	import { onMount } from 'svelte';
+	import ArticleEditor from '$lib/components/ArticleEditor.svelte';
 	export let data;
-	/**
-	 * @type {{ title: string; description: string; markdown: string; _id: string}}
-	 */
-	let article;
-	let failed = false;
 
-	async function fetchAndUpdateArticle() {
-		try {
-			const articleObj = await fetchArticle(data.slug);
-			article = articleObj.article;
-			failed = false;
-		} catch (e) {
-			failed = true;
-			console.log(e);
-		}
-	}
-	onMount(() => {
-		fetchAndUpdateArticle();
-	});
+	$: article = data.article
+	let failed = false;
 </script>
 
 {#if failed}
 	<p>article not found</p>
 {:else}
-	<ArticleEditor {...article} />
+	<ArticleEditor title={article.title} markdown={article.markdown}/>
 {/if}
