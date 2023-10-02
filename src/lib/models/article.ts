@@ -25,4 +25,4 @@ articleSchema.pre("validate", function (next) {
     next();
 });
 
-export default mongoose.model("Article", articleSchema);
+export default mongoose.model("MarkdownArticle", articleSchema);
