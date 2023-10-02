@@ -40,3 +40,12 @@ export async function load({url}) {
         perPage
     }
 }
+
+export const actions = {
+    delete: async ({request}) => {
+        const data = await request.formData();
+        const slug = data.get('slug')
+
+        await Article.findOneAndDelete({slug})
+    }
+}

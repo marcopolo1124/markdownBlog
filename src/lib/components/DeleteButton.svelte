@@ -1,30 +1,30 @@
 <script>
-	import { deleteArticle } from "../../service/deleteArticle";
 
     /**
 	 * @type {string}
 	 */
-    export let articleId
+    export let slug
     /**
-	 * @type {boolean}
-	 */
-    export let toggleDeleteArticle
-    /**
-	 * @type {any[]}
-	 */
-    export let articles
-    const handleClick = async () => {
-        try {
-            await deleteArticle(articleId)
-            toggleDeleteArticle = !toggleDeleteArticle
-            articles = articles.filter(article => article._id !== articleId)
-        } catch(e) {
-            console.log("failed to delete article")
-            console.log(e)
-        }
-    }
+   * @type {any[]}
+   */
+     export let articles = []
+
 </script>
 
-<button on:click={handleClick}>
-    x
-</button>
+<form method="POST" action="?/delete">
+    <input type="hidden" name="slug" value={slug}/>
+    <button/>
+</form>
+
+<style>
+    button {
+        border: none;
+        background: url(./remove.svg) no-repeat 50% 50%;
+        background-size: 1rem 1rem;
+        cursor: pointer;
+        height: 100%;
+        aspect-ratio: 1;
+        opacity: 0.5;
+        transition: opacity 0.2s;
+    }
+</style>

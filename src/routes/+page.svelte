@@ -1,5 +1,6 @@
 <script>
-	import Card from '../lib/components/Card.svelte';
+	import DeleteButton from '$lib/components/DeleteButton.svelte';
+import Card from '../lib/components/Card.svelte';
 	export let data;
 	$: articles = data.articles
 	$: pageNum = data.pageNum
@@ -24,7 +25,11 @@
 				<button on:click={() => {toggleDeleteArticle = !toggleDeleteArticle}}>Toggle delete</button>
 			</div>
 			{#each articles as article (article.slug)}
-				<Card {article}/>
+				<Card {article}>
+					{#if toggleDeleteArticle}
+						<DeleteButton slug={article.slug}/>
+					{/if}
+				</Card>
 			{/each}
 		</div>
 	{/if}
