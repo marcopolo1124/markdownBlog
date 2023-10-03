@@ -4,10 +4,6 @@
 	 * @type {string}
 	 */
     export let slug
-    /**
-   * @type {any[]}
-   */
-     export let articles = []
 
 </script>
 
