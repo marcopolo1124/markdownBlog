@@ -37,7 +37,6 @@
 				if (page < pageCount) {
 					page += 1;
 				}
-				console.log({page, perPage})
 				throw redirect(303, `?page=${page}&perPage=${perPage}`)
 			}}>{'>'}</button
 		>

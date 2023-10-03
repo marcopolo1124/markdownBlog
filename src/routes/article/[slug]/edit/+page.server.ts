@@ -15,10 +15,7 @@ export const load = async ({ params }: { params: { slug: string } }) => {
 
 export const actions = {
 	upsert: async ({ params, request }) => {
-		console.log("upsertArticle")
-		console.log(params)
 		const data = await request.formData();
-		console.log(data.get("title"), data.get("markdown"))
 		const newArticle = await Article.findOneAndUpdate({slug: params.slug}, {
 			title: data.get("title"),
 			markdown: data.get("markdown")

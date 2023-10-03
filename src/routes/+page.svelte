@@ -10,8 +10,6 @@ import Card from '../lib/components/Card.svelte';
 	let failed = false;
 	let toggleDeleteArticle = false;
 
-	$: console.log(articles)
-
 </script>
 
 <div class=body>
