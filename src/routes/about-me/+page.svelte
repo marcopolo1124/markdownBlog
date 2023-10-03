@@ -145,7 +145,6 @@
 		width: 20vw;
 		margin: 10px;
 		text-align: center;
-		height: 20vh;
 		padding: 20px 10px;
 		box-shadow: 10px 5px gray;
 		min-width: 150px;
@@ -161,9 +160,6 @@
 		overflow-wrap: break-word;
 	}
 
-	.card.contacts {
-		width: 25vw;
-	}
 
 	.container { 
 		display: flex;
